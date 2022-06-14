@@ -1,0 +1,80 @@
+//localhost
+
+### READ CARDS
+GET http://cse341-mtg-database.herokuapp.com/cards
+
+### READ TYPES
+GET http://cse341-mtg-database.herokuapp.com/types
+
+### READ CREATURES
+GET http://cse341-mtg-database.herokuapp.com/creatures
+
+### READ ABILITIES
+GET http://cse341-mtg-database.herokuapp.com/abilities
+
+### READ CARD BY NAME
+GET http://cse341-mtg-database.herokuapp.com/cards/Crow of Dark Tidings
+
+### READ ABILITY BY NAME
+GET http://cse341-mtg-database.herokuapp.com/abilities/Flying
+
+
+### CREATE CARDS
+POST http://cse341-mtg-database.herokuapp.com/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Anara, Wolvid Familiar",
+    "manaCost": "4",
+    "color": "Green",
+    "rarity": "Uncommon",
+    "typeId": "1",
+    "creatureId": "4",
+    "abilityId": "7",
+    "description": "As long as it's your turn, commanders you control have indestructible. (Effects that say 'destroy' don't destroy them. A creature with indestructible can't be destroyed by damage.)",
+    "power": "4",
+    "toughness": "4"
+}
+
+### CREATE ABILITIES
+POST http://cse341-mtg-database.herokuapp.com/abilities HTTP/1.1
+content-type: application/json
+
+{
+    "abilityId": "4",
+    "abilityName": "Deathtouch",
+    "abilityDescription": "Deathtouch is effectively instant kill – if a creature on the board has deathtouch, it will kill the creature it’s attacking even if it’s power isn’t high enough – /any/ amount of damage results in death. You typically want Deathtouch on cards that can tank a lot of damage."
+}
+
+### UPDATE CARDS
+PUT http://cse341-mtg-database.herokuapp.com/cards/Anara, Wolvid Familiar HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Anara, Wolvid Familiar",
+    "manaCost": "4",
+    "color": "Green",
+    "rarity": "Uncommon",
+    "typeId": "1",
+    "creatureId": "4",
+    "abilityId": "7",
+    "description": "This updated description. As long as it's your turn, commanders you control have indestructible. (Effects that say 'destroy' don't destroy them. A creature with indestructible can't be destroyed by damage.)",
+    "power": "4",
+    "toughness": "4"
+}
+
+### UPDATE ABILITIES
+PUT http://cse341-mtg-database.herokuapp.com/abilities/Deathtouch HTTP/1.1
+content-type: application/json
+
+{
+    "abilityId": "4",
+    "abilityName": "Deathtouch",
+    "abilityDescription": "This updated description. Deathtouch is effectively instant kill – if a creature on the board has deathtouch, it will kill the creature it’s attacking even if it’s power isn’t high enough – /any/ amount of damage results in death. You typically want Deathtouch on cards that can tank a lot of damage."
+}
+
+### DELETE CARDS
+DELETE http://cse341-mtg-database.herokuapp.com/cards/Anara, Wolvid Familiar HTTP/1.1
+
+### DELETE ABILITIES
+DELETE http://cse341-mtg-database.herokuapp.com/abilities/Deathtouch HTTP/1.1

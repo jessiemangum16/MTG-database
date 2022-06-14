@@ -1,0 +1,44 @@
+{
+    "ability": {
+        "abilityId": "1",
+        "abilityName": "Flying",
+        "abilityDescription": "Creatures with flying can only be blocked by other creatures with flying or reach. However, a flying creature can block all other creatures, with or without flying. Blocking is when a creature attacks and the player chooses whether to block it with a creature, or let the attack through."
+    },
+
+    "ability2": {
+        "abilityId": "2",
+        "abilityName": "Lifelink",
+        "abilityDescription": "Lifelink creatures that inflict damage give the owner the damage inflicted in life. So, say a 2/2 successfully attacked, the owner of the creature would get two life points back. You can exceed your overall health using Lifelink."
+    },
+
+    "ability3": {
+        "abilityId": "3",
+        "abilityName": "Trample",
+        "abilityDescription": "Attacking creatures with trample can deal excess damage to a player or planeswalker if it’s blocked, by dealing more damage than what kills the blocker."
+    },
+
+    "ability5": {
+        "abilityId": "5",
+        "abilityName": "Double Strike",
+        "abilityDescription": "This ability is a little trickier as it involves multiple combat steps. Double strike means the creature will strike twice. It has First Strike (you can find that meaning below) then it strikes at the start of the round along with any other First Strike creatures on the board, it will then strike again during the second combat phase when all other creatures attack."
+    },
+
+    "ability6": {
+        "abilityId": "6",
+        "abilityName": "Haste",
+        "abilityDescription": "This creature can’t be targeted by your opponent’s spells or creature abilities, but can be targeted by your own."
+    },
+
+    "ability7": {
+        "abilityId": "7",
+        "abilityName": "Partner",
+        "abilityDescription": "You can have two commanders if both have partner."
+    },
+
+    "ability8": {
+        "abilityId": "8",
+        "abilityName": "Flash",
+        "abilityDescription": "You can cast this card at any time you could cast an Instant."
+    }
+
+}

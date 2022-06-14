@@ -1,0 +1,27 @@
+{
+    "type": {
+        "typeId": "1",
+        "typeName": "Creature"
+    },
+
+    "type2": {
+        "typeId": "2",
+        "typeName": "Artifact"
+    },
+    
+    "type3": {
+        "typeId": "3",
+        "typeName": "Enchantment"
+    },
+
+    "type4": {
+        "typeId": "4",
+        "typeName": "Instant"
+    },
+
+    "type5": {
+        "typeId": "5",
+        "typeName": "Sorcery"
+    }
+
+}

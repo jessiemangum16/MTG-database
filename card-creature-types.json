@@ -1,0 +1,27 @@
+{
+    "creature": {
+        "creatureId": "1",
+        "creatureName": "Zombie Bird"
+    },
+
+    "creature2": {
+        "creatureId": "2",
+        "creatureName": "Human"
+    },
+
+    "creature3": {
+        "creatureId": "3",
+        "creatureName": "Angel"
+    },
+
+    "creature4": {
+        "creatureId": "4",
+        "creatureName": "Wolf Beast"
+    },
+
+    "creature5": {
+        "creatureId": "5",
+        "creatureName": "Elemental Nightmare"
+    }
+
+}
