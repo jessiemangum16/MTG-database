@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<a id='logout' href='http://localhost:8080/auth/logout'>Logout</a>",
+    "description": "<a id='logout' href='http://cse341-mtg-database.herokuapp.com/auth/logout'>Logout</a>",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-mtg-database.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "http"
