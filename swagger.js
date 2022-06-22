@@ -7,7 +7,7 @@ const doc = {
   },
 
   host: 'cse341-mtg-database.herokuapp.com',
-  schemes: ['http'],
+  schemes: ['http','https'],
 
 };
 
