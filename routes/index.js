@@ -17,6 +17,7 @@ routes.get('/',ensureGuest, (req, res) => {
 
 routes.use('/', require('./swagger'));
 routes.use('/cards', require('./cards'));
+routes.use('/decks', require('./decks'));
 routes.use('/types', require('./types'));
 routes.use('/creatures', require('./creatures'));
 routes.use('/abilities', require('./abilities'));
