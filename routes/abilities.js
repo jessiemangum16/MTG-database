@@ -97,7 +97,8 @@ routes.put("/:abilityName", (req, res) => {
         res.status(400).json("Must use a valid ability name.");
       } else {
         abilities.findOne({ abilityName: abilityName }, (err, ability) => {
-          ability.abilityId = req.params.abilityId;
+          //Chris - Changed req.params.abilityId to req.body.abilityId 07/01/2022
+          ability.abilityId = req.body.abilityId;
           ability.abilityName = req.body.abilityName;
           ability.abilityDescription = req.body.abilityDescription;
           ability.save(function (err) {
@@ -128,7 +129,8 @@ routes.delete("/:abilityName", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "swagger": "node ./swagger.js"
+    "swagger": "node ./swagger.js",
+    "test": "jest --coverage --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,12 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.16"
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "globalTeardown": "./test-teardown-globals.js"
   }
 }

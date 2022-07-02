@@ -95,7 +95,8 @@ routes.put("/:creatureName", (req, res) => {
         res.status(400).json("Must use a valid creature name.");
       } else {
         creatures.findOne({ creatureName: creatureName }, (err, creature) => {
-          creature.creatureId = req.params.creatureId;
+          //Chris-Changed req.params.creatureId to req.body.creatureId 07/01/2022
+          creature.creatureId = req.body.creatureId;
           creature.creatureName = req.body.creatureName;
           creature.save(function (err) {
             if (err) {
@@ -125,7 +126,8 @@ routes.delete("/:creatureName", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });

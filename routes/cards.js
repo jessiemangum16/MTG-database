@@ -111,7 +111,7 @@ routes.put("/:cardName", (req, res) => {
         res.status(400).json("Must use a valid name.");
       } else {
         cards.findOne({ cardName: cardName }, (err, card) => {
-          card.cardName = req.params.cardName;
+          card.cardName = req.body.cardName;
           card.manaCost = req.body.manaCost;
           card.color = req.body.color;
           card.rarity = req.body.rarity;
@@ -149,7 +149,8 @@ routes.delete("/:cardName", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });

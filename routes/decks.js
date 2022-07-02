@@ -95,7 +95,7 @@ routes.put("/:deckName", (req, res) => {
         res.status(400).json("Must use a valid name.");
       } else {
         decks.findOne({ deckName: deckName }, (err, deck) => {
-          deck.deckName = req.params.deckName;
+          deck.deckName = req.body.deckName;
           deck.cardId = req.body.cardId;
           deck.save(function (err) {
             if (err) {
@@ -125,7 +125,8 @@ routes.delete("/:deckName", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });
