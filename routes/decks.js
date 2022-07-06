@@ -189,7 +189,8 @@ routes.delete("/:deckId", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });

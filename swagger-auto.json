@@ -8,7 +8,8 @@
   "host": "cse341-mtg-database.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {

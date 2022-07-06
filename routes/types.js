@@ -95,7 +95,8 @@ routes.put("/:typeName", (req, res) => {
         res.status(400).json("Must use a valid type name.");
       } else {
         types.findOne({ typeName: typeName }, (err, type) => {
-          type.typeId = req.params.typeId;
+          //Chris- changed req.params.typeId to req.body.typeId 07/01/2022
+          type.typeId = req.body.typeId;
           type.typeName = req.body.typeName;
           type.save(function (err) {
             if (err) {
@@ -125,7 +126,8 @@ routes.delete("/:typeName", (req, res) => {
           } else {
             res.status(200).send(result);
           }
-        })
+          //Chris-Added .clone() to fix MongooseError: Query was already executed error 07/01/2022
+        }).clone()
           .catch((error) => console.error(error));
       }
     });
