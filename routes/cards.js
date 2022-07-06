@@ -155,4 +155,39 @@ routes.delete("/:cardName", (req, res) => {
     });
 });
 
+//Add a card to user card list
+routes.post("/:cardName/:userId", (req, res) => {
+  const cardName = req.params.cardName;
+  const userId = req.params.userId;
+  if(!userId || !cardName){
+    res.status(400).json("Must use a valid user id and card name.");
+  }
+  else{
+    users.countDocuments({ userId: userId })
+    .then(function (num) {
+      if (num === 0) {
+        res.status(400).json("Could not find user.");
+      } else {
+        cards.countDocuments({ cardName: cardName })
+        .then(function (num) {
+          if (num === 0) {
+            res.status(400).json("Could not find card.");
+          } else {
+            users.findOne({ userId: userId }, (err, user) => {
+              user.cardList.push(cardName);
+              user.save(function (err) {
+                if (err) {
+                  res.status(500).json(err || 'Some error occurred while updating the card.');
+                } else {
+                  res.status(200).send();
+                }
+              })
+            })
+          }
+        }).catch((error) => console.error(error));     
+      }
+    }).catch((error) => console.error(error));
+  }
+});
+
 module.exports = routes;
