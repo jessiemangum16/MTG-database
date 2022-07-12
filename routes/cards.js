@@ -7,7 +7,7 @@ routes.use(bodyParser.urlencoded({ extended: false }));
 routes.use(bodyParser.json());
 
 const cards = require('../models/cards');
-//const users = require('../models/Users');
+const users = require('../models/User');
 
 
 
