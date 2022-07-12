@@ -206,6 +206,36 @@
         }
       }
     },
+    "/cards/{cardName}/{userId}": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "cardName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/decks/": {
       "get": {
         "description": "",
@@ -231,7 +261,7 @@
                 "deckName": {
                   "example": "any"
                 },
-                "cardId": {
+                "userId": {
                   "example": "any"
                 }
               }
@@ -273,12 +303,14 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/decks/{deckId}": {
       "put": {
         "description": "",
         "parameters": [
           {
-            "name": "deckName",
+            "name": "deckId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -290,9 +322,6 @@
               "type": "object",
               "properties": {
                 "deckName": {
-                  "example": "any"
-                },
-                "cardId": {
                   "example": "any"
                 }
               }
@@ -315,7 +344,65 @@
         "description": "",
         "parameters": [
           {
-            "name": "deckName",
+            "name": "deckId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/decks/{deckId}/{cardId}": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "deckId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cardId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "deckId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cardId",
             "in": "path",
             "required": true,
             "type": "string"
