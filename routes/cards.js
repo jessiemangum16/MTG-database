@@ -48,7 +48,7 @@ routes.get("/:cardName", (req, res) => {
 });
 
 //Get All cards with user id X
-routes.get("/:cardName", (req, res) => {
+routes.get("/:userId", (req, res) => {
   const userId = req.params.userId;
 
   cards.countDocuments({ userId: userId })
