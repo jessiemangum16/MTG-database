@@ -47,6 +47,29 @@ routes.get("/:cardName", (req, res) => {
     });
 });
 
+//Get All cards with user id X
+routes.get("/:cardName", (req, res) => {
+  const userId = req.params.userId;
+
+  cards.countDocuments({ userId: userId })
+    .then(function (num) {
+      if (num === 0) {
+        res.status(400).json("Must use a valid userID.");
+      } else {
+        cards.find({ userId: userId })
+        .then((data) => {
+          res.status(200).send(data);
+          console.log(`returned all cards with user Id ${req.params.userId}`);
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: err.message || 'Some error occurred while retrieving data.'
+          });
+        });
+      }
+    });
+});
+
 //Add new
 routes.post("/", (req, res) => {
   if (
