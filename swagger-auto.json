@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
+    "title": "MTG Cards Database",
     "description": "<a id='logout' href='http://cse341-mtg-database.herokuapp.com/auth/logout'>Logout</a>",
     "version": "1.0.0"
   },
@@ -11,6 +11,13 @@
     "http",
     "https"
   ],
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "auth-token"
+    }
+  },
   "paths": {
     "/": {
       "get": {
@@ -32,6 +39,9 @@
     },
     "/cards/": {
       "get": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -41,9 +51,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -96,11 +114,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/cards/{cardName}": {
       "get": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -120,9 +146,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "put": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -181,9 +215,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -203,11 +245,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/cards/{userId}": {
       "get": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -227,11 +277,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/cards/{cardName}/{userId}": {
       "post": {
+        "tags": [
+          "Cards"
+        ],
         "description": "",
         "parameters": [
           {
@@ -257,7 +315,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/decks/": {

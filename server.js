@@ -10,22 +10,19 @@ const connectDB = require('./config/db')
 
 //SWAGGER
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger-output.json');
+const swaggerDocument = require('./swagger-auto.json');
 const swaggerOption = {
     swaggerDefiniation: {
         info: {
-            title: 'CSE 341 Personal Project',
-            description: 'An API for tracking survey orders for meat deparment and produce department.',
-            contact:{
-                name: "Christopher Bowen"
-            },
-            server: ["https://cse341-personalproject-cwbowen.herokuapp.com/"]
+            title: 'MTG Cards Database',
+            description: "<a id='logout' href='http://cse341-mtg-database.herokuapp.com/auth/logout'>Logout</a>",
+            server: ["https://cse341-mtg-database.herokuapp.com/"]
         }
     },
     apis: ['.routes/*.js']    
 };
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // load config
 dotenv.config({ path: './config/config.env'})
@@ -37,6 +34,7 @@ connectDB()
 
 const app = express();
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // // Logging
 // if (process.env.NODE_ENV === 'development'){
 //   app.use(morgan('dev'))
