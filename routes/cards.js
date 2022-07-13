@@ -52,12 +52,12 @@ routes.get("/:cardName", (req, res) => {
 routes.get("/:userId", (req, res) => {
   const userId = req.params.userId;
 
-  users.countDocuments({ userId: userId })
+  users.countDocuments({ googleId: userId })
     .then(function (num) {
       if (num === 0) {
         res.status(400).json("Must use a valid userID.");
       } else {
-        users.find({ userId: userId })
+        users.find({ googleId: userId })
         .then((data) => {
           res.status(200).send(data);
           console.log(`returned all cards with user Id ${req.params.userId}`);
