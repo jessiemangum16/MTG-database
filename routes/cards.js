@@ -235,7 +235,7 @@ routes.delete("/:cardName", (req, res) => {
 });
 
 //Add a card to user card list
-routes.post("/:cardName", (req, res) => {
+routes.post("/:cardName/:userId", (req, res) => {
 
     /*
   #swagger.tags = ['User Cards'] 
@@ -246,7 +246,7 @@ routes.post("/:cardName", (req, res) => {
   */
 
   const cardName = req.params.cardName;
-  app.use(passport.session())
+  const userId = req.params.cardName;
 
   if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
