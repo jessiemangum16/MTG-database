@@ -188,7 +188,7 @@ routes.post("/:cardName/:userId", (req, res) => {
     res.status(400).json("Must use a valid user id and card name.");
   }
   else{
-    users.countDocuments({ _id: userId })
+    users.countDocuments({ googleId: userId })
     .then(function (num) {
       if (num === 0) {
         res.status(400).json("Could not find user.");
@@ -198,7 +198,7 @@ routes.post("/:cardName/:userId", (req, res) => {
           if (num === 0) {
             res.status(400).json("Could not find card.");
           } else {
-            users.findOne({ _id: userId }, (err, user) => {
+            users.findOne({ googleId: userId }, (err, user) => {
               user.cardList.push(cardName);
               user.save(function (err) {
                 if (err) {
