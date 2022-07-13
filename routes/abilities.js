@@ -17,6 +17,14 @@ const abilities = require('../models/abilities');
 
 //Get ALL
 routes.get("/", (req, res) => {
+
+    /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
     abilities.find({})
     .then((data) => {
       res.status(200).send(data);
@@ -31,6 +39,14 @@ routes.get("/", (req, res) => {
 
 //Get ONE
 routes.get("/:abilityName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const abilityName = req.params.abilityName;
 
   abilities.countDocuments({ abilityName: abilityName })
@@ -54,6 +70,14 @@ routes.get("/:abilityName", (req, res) => {
 
 //Add new
 routes.post("/", (req, res) => {
+
+    /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   if (
     !req.body.abilityId ||
     !req.body.abilityName ||
@@ -82,6 +106,14 @@ routes.post("/", (req, res) => {
 
 //Update
 routes.put("/:abilityName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const abilityName = req.params.abilityName;
 
   if (
@@ -121,6 +153,14 @@ routes.put("/:abilityName", (req, res) => {
 
 //Delete
 routes.delete("/:abilityName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+ 
   const abilityName = req.params.abilityName;
 
   abilities.countDocuments({ abilityName: abilityName })

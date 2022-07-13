@@ -325,6 +325,9 @@
     },
     "/decks/": {
       "get": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -334,9 +337,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -365,11 +376,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/decks/{deckName}": {
       "get": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -389,11 +408,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/decks/{deckId}": {
       "put": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -425,9 +452,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -447,11 +482,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/decks/{deckId}/{cardId}": {
       "post": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -477,9 +520,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Decks"
+        ],
         "description": "",
         "parameters": [
           {
@@ -505,11 +556,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/types/": {
       "get": {
+        "tags": [
+          "Types"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -519,9 +578,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Types"
+        ],
         "description": "",
         "parameters": [
           {
@@ -550,11 +617,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/types/{typeName}": {
       "get": {
+        "tags": [
+          "Types"
+        ],
         "description": "",
         "parameters": [
           {
@@ -574,9 +649,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "put": {
+        "tags": [
+          "Types"
+        ],
         "description": "",
         "parameters": [
           {
@@ -611,9 +694,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Types"
+        ],
         "description": "",
         "parameters": [
           {
@@ -633,11 +724,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/creatures/": {
       "get": {
+        "tags": [
+          "Creatures"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -647,9 +746,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Creatures"
+        ],
         "description": "",
         "parameters": [
           {
@@ -678,11 +785,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/creatures/{creatureName}": {
       "get": {
+        "tags": [
+          "Creatures"
+        ],
         "description": "",
         "parameters": [
           {
@@ -702,9 +817,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "put": {
+        "tags": [
+          "Creatures"
+        ],
         "description": "",
         "parameters": [
           {
@@ -739,9 +862,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Creatures"
+        ],
         "description": "",
         "parameters": [
           {
@@ -761,11 +892,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/abilities/": {
       "get": {
+        "tags": [
+          "Abilities"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -775,9 +914,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "post": {
+        "tags": [
+          "Abilities"
+        ],
         "description": "",
         "parameters": [
           {
@@ -809,11 +956,19 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/abilities/{abilityName}": {
       "get": {
+        "tags": [
+          "Abilities"
+        ],
         "description": "",
         "parameters": [
           {
@@ -833,9 +988,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "put": {
+        "tags": [
+          "Abilities"
+        ],
         "description": "",
         "parameters": [
           {
@@ -873,9 +1036,17 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Abilities"
+        ],
         "description": "",
         "parameters": [
           {
@@ -895,7 +1066,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     }
   }

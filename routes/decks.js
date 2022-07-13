@@ -17,6 +17,14 @@ const decks = require('../models/decks');
 
 //Get ALL
 routes.get("/", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
     decks.find({})
     .then((data) => {
       res.status(200).send(data);
@@ -31,6 +39,14 @@ routes.get("/", (req, res) => {
 
 //Get ONE
 routes.get("/:deckName", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const deckName = req.params.deckName;
 
   decks.countDocuments({ deckName: deckName })
@@ -54,6 +70,14 @@ routes.get("/:deckName", (req, res) => {
 
 //Add new
 routes.post("/", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   if (
     !req.body.deckName ||
     !req.body.userId
@@ -100,6 +124,14 @@ routes.post("/", (req, res) => {
 
 //Update
 routes.put("/:deckId", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const deckId = req.params.deckId;
 
   if (
@@ -134,6 +166,14 @@ routes.put("/:deckId", (req, res) => {
 
 //Add card to deck
 routes.post("/:deckId/:cardId", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const deckId = req.params.deckId;
   const cardId = req.params.cardId;
   decks.countDocuments({ deckId: deckId })
@@ -157,6 +197,14 @@ routes.post("/:deckId/:cardId", (req, res) => {
 
 //Remove card from deck
 routes.delete("/:deckId/:cardId", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const deckId = req.params.deckId;
   const cardId = req.params.cardId;
   decks.countDocuments({ deckId: deckId })
@@ -181,6 +229,14 @@ routes.delete("/:deckId/:cardId", (req, res) => {
 
 //Delete
 routes.delete("/:deckId", (req, res) => {
+
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+ 
   const deckId = req.params.deckId;
 
   decks.countDocuments({ deckId: deckId })

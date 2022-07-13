@@ -17,6 +17,15 @@ const types = require('../models/types');
 
 //Get ALL
 routes.get("/", (req, res) => {
+
+    /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
+
     types.find({})
     .then((data) => {
       res.status(200).send(data);
@@ -31,6 +40,15 @@ routes.get("/", (req, res) => {
 
 //Get ONE
 routes.get("/:typeName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
+
   const typeName = req.params.typeName;
 
   types.countDocuments({ typeName: typeName })
@@ -54,6 +72,15 @@ routes.get("/:typeName", (req, res) => {
 
 //Add new
 routes.post("/", (req, res) => {
+
+    /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
+
   if (
     !req.body.typeId ||
     !req.body.typeName
@@ -81,6 +108,15 @@ routes.post("/", (req, res) => {
 
 //Update
 routes.put("/:typeName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
+
   const typeName = req.params.typeName;
 
   if (
@@ -118,6 +154,15 @@ routes.put("/:typeName", (req, res) => {
 
 //Delete
 routes.delete("/:typeName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
+  
   const typeName = req.params.typeName;
 
   types.countDocuments({ typeName: typeName })

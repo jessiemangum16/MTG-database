@@ -17,6 +17,14 @@ const creatures = require('../models/creatures');
 
 //Get ALL
 routes.get("/", (req, res) => {
+
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
     creatures.find({})
     .then((data) => {
       res.status(200).send(data);
@@ -31,6 +39,14 @@ routes.get("/", (req, res) => {
 
 //Get ONE
 routes.get("/:creatureName", (req, res) => {
+
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const creatureName = req.params.creatureName;
 
   creatures.countDocuments({ creatureName: creatureName })
@@ -54,6 +70,14 @@ routes.get("/:creatureName", (req, res) => {
 
 //Add new
 routes.post("/", (req, res) => {
+
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   if (
     !req.body.creatureId ||
     !req.body.creatureName
@@ -81,6 +105,14 @@ routes.post("/", (req, res) => {
 
 //Update
 routes.put("/:creatureName", (req, res) => {
+
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const creatureName = req.params.creatureName;
 
   if (
@@ -118,6 +150,14 @@ routes.put("/:creatureName", (req, res) => {
 
 //Delete
 routes.delete("/:creatureName", (req, res) => {
+
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+ 
   const creatureName = req.params.creatureName;
 
   creatures.countDocuments({ creatureName: creatureName })
