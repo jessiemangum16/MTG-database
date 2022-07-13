@@ -8,7 +8,12 @@ routes.use(bodyParser.json());
 
 const creatures = require('../models/creatures');
 
-
+  /*
+  #swagger.tags = ['Creatures'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
 
 //Get ALL
 routes.get("/", (req, res) => {

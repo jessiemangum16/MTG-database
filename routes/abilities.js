@@ -8,7 +8,12 @@ routes.use(bodyParser.json());
 
 const abilities = require('../models/abilities');
 
-
+  /*
+  #swagger.tags = ['Abilities'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
 
 //Get ALL
 routes.get("/", (req, res) => {

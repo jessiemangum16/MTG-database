@@ -9,7 +9,12 @@ routes.use(bodyParser.json());
 const cards = require('../models/cards');
 const users = require('../models/User');
 
-
+  /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
 
 //Get ALL
 routes.get("/", (req, res) => {

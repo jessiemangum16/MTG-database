@@ -8,7 +8,12 @@ routes.use(bodyParser.json());
 
 const types = require('../models/types');
 
-
+  /*
+  #swagger.tags = ['Types'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
 
 //Get ALL
 routes.get("/", (req, res) => {

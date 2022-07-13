@@ -8,7 +8,12 @@ routes.use(bodyParser.json());
 
 const decks = require('../models/decks');
 
-
+  /*
+  #swagger.tags = ['Decks'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
 
 //Get ALL
 routes.get("/", (req, res) => {
