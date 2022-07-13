@@ -67,7 +67,7 @@ routes.get("/:cardName", (req, res) => {
 routes.get("/:userId", (req, res) => {
 
     /*
-  #swagger.tags = ['Cards'] 
+  #swagger.tags = ['User Cards'] 
   #swagger.security = [{
     "JWT": []
   }]
@@ -231,12 +231,12 @@ routes.delete("/:cardName", (req, res) => {
 routes.post("/:cardName/:userId", (req, res) => {
 
     /*
-  #swagger.tags = ['Cards'] 
+  #swagger.tags = ['User Cards'] 
   #swagger.security = [{
     "JWT": []
   }]
   */
- 
+
   const cardName = req.params.cardName;
   const userId = req.params.userId;
   if(!userId || !cardName){
