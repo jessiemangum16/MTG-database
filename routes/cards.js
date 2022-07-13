@@ -68,6 +68,7 @@ routes.get("/:userId", (req, res) => {
 
     /*
   #swagger.tags = ['User Cards'] 
+  #swagger.description = ['Get all cards for current user']
   #swagger.security = [{
     "JWT": []
   }]

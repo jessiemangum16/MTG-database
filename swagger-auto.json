@@ -258,7 +258,7 @@
         "tags": [
           "User Cards"
         ],
-        "description": "",
+        "description": "['Get all cards for current user']",
         "parameters": [
           {
             "name": "userId",
