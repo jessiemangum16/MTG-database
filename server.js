@@ -8,6 +8,25 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const connectDB = require('./config/db')
 
+//SWAGGER
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+const swaggerOption = {
+    swaggerDefiniation: {
+        info: {
+            title: 'CSE 341 Personal Project',
+            description: 'An API for tracking survey orders for meat deparment and produce department.',
+            contact:{
+                name: "Christopher Bowen"
+            },
+            server: ["https://cse341-personalproject-cwbowen.herokuapp.com/"]
+        }
+    },
+    apis: ['.routes/*.js']    
+};
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // load config
 dotenv.config({ path: './config/config.env'})
 

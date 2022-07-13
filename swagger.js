@@ -2,13 +2,19 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
+    title: 'MTG Cards Database',
     description: "<a id='logout' href='http://cse341-mtg-database.herokuapp.com/auth/logout'>Logout</a>",
   },
 
   host: 'cse341-mtg-database.herokuapp.com',
   schemes: ['http','https'],
-
+  securityDefinitions: {  
+    JWT:{  
+      type: 'apiKey',  
+      in: 'header',  
+      name: 'auth-token'
+    }
+  }
 };
 
 const outputFile = './swagger-auto.json';
@@ -31,4 +37,6 @@ description: "<a id='logout' href='http://localhost:8080/auth/logout'>Logout</a>
   schemes: ['http'],
 */
 
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+  require('./server.js');
+});
