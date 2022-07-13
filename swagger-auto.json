@@ -335,6 +335,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Get all decks",
         "description": "",
         "parameters": [],
         "responses": {
@@ -355,6 +356,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Add new deck to the database",
         "description": "",
         "parameters": [
           {
@@ -396,6 +398,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Get one deck by deck name",
         "description": "",
         "parameters": [
           {
@@ -428,6 +431,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Update existing deck in the database",
         "description": "",
         "parameters": [
           {
@@ -470,6 +474,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Delete existing deck from database",
         "description": "",
         "parameters": [
           {
@@ -502,6 +507,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Add card to existing deck",
         "description": "",
         "parameters": [
           {
@@ -538,6 +544,7 @@
         "tags": [
           "Decks"
         ],
+        "summary": "Remove card from existing deck",
         "description": "",
         "parameters": [
           {
@@ -576,6 +583,7 @@
         "tags": [
           "Types"
         ],
+        "summary": "Get all card types",
         "description": "",
         "parameters": [],
         "responses": {
@@ -596,6 +604,7 @@
         "tags": [
           "Types"
         ],
+        "summary": "Add new card type to the database",
         "description": "",
         "parameters": [
           {
@@ -637,6 +646,7 @@
         "tags": [
           "Types"
         ],
+        "summary": "Get one card type by type name",
         "description": "",
         "parameters": [
           {
@@ -667,6 +677,7 @@
         "tags": [
           "Types"
         ],
+        "summary": "Update existing card type in databases",
         "description": "",
         "parameters": [
           {
@@ -712,6 +723,7 @@
         "tags": [
           "Types"
         ],
+        "summary": "Delete existing card from database",
         "description": "",
         "parameters": [
           {
@@ -744,6 +756,7 @@
         "tags": [
           "Creatures"
         ],
+        "summary": "Get all creatures",
         "description": "",
         "parameters": [],
         "responses": {
@@ -764,6 +777,7 @@
         "tags": [
           "Creatures"
         ],
+        "summary": "Add new creature to database",
         "description": "",
         "parameters": [
           {
@@ -805,6 +819,7 @@
         "tags": [
           "Creatures"
         ],
+        "summary": "Get one creature by creature name",
         "description": "",
         "parameters": [
           {
@@ -835,6 +850,7 @@
         "tags": [
           "Creatures"
         ],
+        "summary": "Update existing creature in database",
         "description": "",
         "parameters": [
           {
@@ -880,6 +896,7 @@
         "tags": [
           "Creatures"
         ],
+        "summary": "Delete existing creature from database",
         "description": "",
         "parameters": [
           {
@@ -912,6 +929,7 @@
         "tags": [
           "Abilities"
         ],
+        "summary": "Get all card abilities",
         "description": "",
         "parameters": [],
         "responses": {
@@ -932,6 +950,7 @@
         "tags": [
           "Abilities"
         ],
+        "summary": "Add new card ability to the database",
         "description": "",
         "parameters": [
           {
@@ -976,6 +995,7 @@
         "tags": [
           "Abilities"
         ],
+        "summary": "Get one card ability by ability name",
         "description": "",
         "parameters": [
           {
@@ -1006,6 +1026,7 @@
         "tags": [
           "Abilities"
         ],
+        "summary": "Update existing card in the database",
         "description": "",
         "parameters": [
           {
@@ -1054,6 +1075,7 @@
         "tags": [
           "Abilities"
         ],
+        "summary": "Delete existing card from the database",
         "description": "",
         "parameters": [
           {

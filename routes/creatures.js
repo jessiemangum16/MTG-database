@@ -20,6 +20,7 @@ routes.get("/", (req, res) => {
 
   /*
   #swagger.tags = ['Creatures'] 
+  #swagger.summary = Get all creatures
   #swagger.security = [{
     "JWT": []
   }]
@@ -42,6 +43,7 @@ routes.get("/:creatureName", (req, res) => {
 
   /*
   #swagger.tags = ['Creatures'] 
+  #swagger.summary = Get one creature by creature name
   #swagger.security = [{
     "JWT": []
   }]
@@ -73,6 +75,7 @@ routes.post("/", (req, res) => {
 
   /*
   #swagger.tags = ['Creatures'] 
+  #swagger.summary = Add new creature to database
   #swagger.security = [{
     "JWT": []
   }]
@@ -108,6 +111,7 @@ routes.put("/:creatureName", (req, res) => {
 
   /*
   #swagger.tags = ['Creatures'] 
+  #swagger.summary = Update existing creature in database
   #swagger.security = [{
     "JWT": []
   }]
@@ -153,11 +157,12 @@ routes.delete("/:creatureName", (req, res) => {
 
   /*
   #swagger.tags = ['Creatures'] 
+  #swagger.summary = Delete existing creature from database
   #swagger.security = [{
     "JWT": []
   }]
   */
- 
+
   const creatureName = req.params.creatureName;
 
   creatures.countDocuments({ creatureName: creatureName })

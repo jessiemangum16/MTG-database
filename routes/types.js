@@ -10,6 +10,7 @@ const types = require('../models/types');
 
   /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = summary
   #swagger.security = [{
     "JWT": []
   }]
@@ -20,6 +21,7 @@ routes.get("/", (req, res) => {
 
     /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = Get all card types
   #swagger.security = [{
     "JWT": []
   }]
@@ -43,6 +45,7 @@ routes.get("/:typeName", (req, res) => {
 
     /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = Get one card type by type name
   #swagger.security = [{
     "JWT": []
   }]
@@ -75,6 +78,7 @@ routes.post("/", (req, res) => {
 
     /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = Add new card type to the database
   #swagger.security = [{
     "JWT": []
   }]
@@ -111,6 +115,7 @@ routes.put("/:typeName", (req, res) => {
 
     /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = Update existing card type in databases
   #swagger.security = [{
     "JWT": []
   }]
@@ -157,12 +162,13 @@ routes.delete("/:typeName", (req, res) => {
 
     /*
   #swagger.tags = ['Types'] 
+  #swagger.summary = Delete existing card from database
   #swagger.security = [{
     "JWT": []
   }]
   */
 
-  
+
   const typeName = req.params.typeName;
 
   types.countDocuments({ typeName: typeName })

@@ -20,6 +20,7 @@ routes.get("/", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Get all decks
   #swagger.security = [{
     "JWT": []
   }]
@@ -42,6 +43,7 @@ routes.get("/:deckName", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Get one deck by deck name
   #swagger.security = [{
     "JWT": []
   }]
@@ -73,6 +75,7 @@ routes.post("/", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Add new deck to the database
   #swagger.security = [{
     "JWT": []
   }]
@@ -127,6 +130,7 @@ routes.put("/:deckId", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Update existing deck in the database
   #swagger.security = [{
     "JWT": []
   }]
@@ -169,6 +173,7 @@ routes.post("/:deckId/:cardId", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Add card to existing deck
   #swagger.security = [{
     "JWT": []
   }]
@@ -200,6 +205,7 @@ routes.delete("/:deckId/:cardId", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Remove card from existing deck
   #swagger.security = [{
     "JWT": []
   }]
@@ -232,11 +238,12 @@ routes.delete("/:deckId", (req, res) => {
 
   /*
   #swagger.tags = ['Decks'] 
+  #swagger.summary = Delete existing deck from database
   #swagger.security = [{
     "JWT": []
   }]
   */
- 
+
   const deckId = req.params.deckId;
 
   decks.countDocuments({ deckId: deckId })

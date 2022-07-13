@@ -10,6 +10,7 @@ const abilities = require('../models/abilities');
 
   /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = summary
   #swagger.security = [{
     "JWT": []
   }]
@@ -20,6 +21,7 @@ routes.get("/", (req, res) => {
 
     /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = Get all card abilities
   #swagger.security = [{
     "JWT": []
   }]
@@ -42,6 +44,7 @@ routes.get("/:abilityName", (req, res) => {
 
     /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = Get one card ability by ability name
   #swagger.security = [{
     "JWT": []
   }]
@@ -73,6 +76,7 @@ routes.post("/", (req, res) => {
 
     /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = Add new card ability to the database
   #swagger.security = [{
     "JWT": []
   }]
@@ -109,6 +113,7 @@ routes.put("/:abilityName", (req, res) => {
 
     /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = Update existing card in the database
   #swagger.security = [{
     "JWT": []
   }]
@@ -156,11 +161,12 @@ routes.delete("/:abilityName", (req, res) => {
 
     /*
   #swagger.tags = ['Abilities'] 
+  #swagger.summary = Delete existing card from the database
   #swagger.security = [{
     "JWT": []
   }]
   */
- 
+
   const abilityName = req.params.abilityName;
 
   abilities.countDocuments({ abilityName: abilityName })
