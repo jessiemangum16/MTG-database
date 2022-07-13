@@ -261,7 +261,7 @@
         "tags": [
           "User Cards"
         ],
-        "summary": "Add card to users cards by card Id",
+        "summary": "Add card to users cards by card name",
         "description": "",
         "parameters": [
           {

@@ -1,6 +1,7 @@
 const express = require("express");
 const routes = express.Router();
 const mongoose = require('mongoose')
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 
 const bodyParser = require("body-parser");
 routes.use(bodyParser.urlencoded({ extended: false }));
@@ -238,18 +239,26 @@ routes.post("/:cardName", (req, res) => {
 
     /*
   #swagger.tags = ['User Cards'] 
-  #swagger.summary = Add card to users cards by card Id
+  #swagger.summary = Add card to users cards by card name
   #swagger.security = [{
     "JWT": []
   }]
   */
 
   const cardName = req.params.cardName;
+
+  passport.use(
+      async (accessToken, refreshToken, profile, done) => {
+        const userId = profile.id;
+        return userId;
+      })
+      console.log(profile.id);
+      console.log(userId);
   if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
   }
   else{
-    users.countDocuments({ googleId: profile.id })
+    users.countDocuments({ googleId: userId })
     .then(function (num) {
       if (num === 0) {
         res.status(400).json("Could not find user.");
@@ -259,7 +268,7 @@ routes.post("/:cardName", (req, res) => {
           if (num === 0) {
             res.status(400).json("Could not find card.");
           } else {
-            users.findOne({ googleId: profile.id }, (err, user) => {
+            users.findOne({ googleId: userId }, (err, user) => {
               user.cards.push(cardName);
               user.save(function (err) {
                 if (err) {
