@@ -247,13 +247,18 @@ routes.post("/:cardName", (req, res) => {
 
   const cardName = req.params.cardName;
 
-  passport.use(
-      async (accessToken, refreshToken, profile, done) => {
-        const userId = profile.id;
-        return userId;
-      })
-      console.log(profile.id);
-      console.log(userId);
+  function getCurrentUser (passport) {
+    passport.use(
+        async (accessToken, refreshToken, profile, done) => {
+          const userId = profile.id;
+          return userId;
+        }
+      )
+      return userId;
+  }
+
+  const userId = getCurrentUser();
+
   if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
   }
