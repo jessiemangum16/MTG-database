@@ -15,6 +15,7 @@ routes.get("/", (req, res) => {
 
     /*
   #swagger.tags = ['Cards'] 
+  #swagger.summary = Get all cards
   #swagger.security = [{
     "JWT": []
   }]
@@ -37,6 +38,7 @@ routes.get("/:cardName", (req, res) => {
 
     /*
   #swagger.tags = ['Cards'] 
+  #swagger.summary = Get one card by card name
   #swagger.security = [{
     "JWT": []
   }]
@@ -100,6 +102,7 @@ routes.post("/", (req, res) => {
 
     /*
   #swagger.tags = ['Cards'] 
+  #swagger.summary = Add new card to database
   #swagger.security = [{
     "JWT": []
   }]
@@ -143,6 +146,7 @@ routes.put("/:cardName", (req, res) => {
 
     /*
   #swagger.tags = ['Cards'] 
+  #swagger.summary = Update existing card by name
   #swagger.security = [{
     "JWT": []
   }]
@@ -203,6 +207,7 @@ routes.delete("/:cardName", (req, res) => {
 
     /*
   #swagger.tags = ['Cards'] 
+  #swagger.summary = Delete existing card by name
   #swagger.security = [{
     "JWT": []
   }]
@@ -233,13 +238,14 @@ routes.post("/:cardName/:userId", (req, res) => {
 
     /*
   #swagger.tags = ['User Cards'] 
+  #swagger.summary = Add card to users cards by card Id
   #swagger.security = [{
     "JWT": []
   }]
   */
 
   const cardName = req.params.cardName;
-  const userId = req.params.userId;
+  const userId = profile.id;
   if(!userId || !cardName){
     res.status(400).json("Must use a valid user id and card name.");
   }

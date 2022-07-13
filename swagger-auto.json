@@ -42,6 +42,7 @@
         "tags": [
           "Cards"
         ],
+        "summary": "Get all cards",
         "description": "",
         "parameters": [],
         "responses": {
@@ -62,6 +63,7 @@
         "tags": [
           "Cards"
         ],
+        "summary": "Add new card to database",
         "description": "",
         "parameters": [
           {
@@ -127,6 +129,7 @@
         "tags": [
           "Cards"
         ],
+        "summary": "Get one card by card name",
         "description": "",
         "parameters": [
           {
@@ -157,6 +160,7 @@
         "tags": [
           "Cards"
         ],
+        "summary": "Update existing card by name",
         "description": "",
         "parameters": [
           {
@@ -226,6 +230,7 @@
         "tags": [
           "Cards"
         ],
+        "summary": "Delete existing card by name",
         "description": "",
         "parameters": [
           {
@@ -291,6 +296,7 @@
         "tags": [
           "User Cards"
         ],
+        "summary": "Add card to users cards by card Id",
         "description": "",
         "parameters": [
           {
