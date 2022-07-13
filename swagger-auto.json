@@ -258,39 +258,6 @@
         ]
       }
     },
-    "/cards/{userId}": {
-      "get": {
-        "tags": [
-          "User Cards"
-        ],
-        "summary": "Get all cards for current user",
-        "description": "",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "JWT": []
-          }
-        ]
-      }
-    },
     "/cards/{cardName}/{userId}": {
       "post": {
         "tags": [
