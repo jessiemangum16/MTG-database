@@ -246,18 +246,7 @@ routes.post("/:cardName", (req, res) => {
   */
 
   const cardName = req.params.cardName;
-
-  function getCurrentUser (passport) {
-    passport.use(
-        async (accessToken, refreshToken, profile, done) => {
-          const userId = profile.id;
-          return userId;
-        }
-      )
-      return userId;
-  }
-
-  const userId = getCurrentUser();
+  app.use(passport.session())
 
   if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
