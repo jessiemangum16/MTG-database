@@ -9,15 +9,17 @@ routes.use(bodyParser.json());
 const cards = require('../models/cards');
 const users = require('../models/User');
 
-  /*
+
+//Get ALL
+routes.get("/", (req, res) => {
+
+    /*
   #swagger.tags = ['Cards'] 
   #swagger.security = [{
     "JWT": []
   }]
   */
 
-//Get ALL
-routes.get("/", (req, res) => {
     cards.find({})
     .then((data) => {
       res.status(200).send(data);
@@ -32,6 +34,14 @@ routes.get("/", (req, res) => {
 
 //Get ONE
 routes.get("/:cardName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const cardName = req.params.cardName;
 
   cards.countDocuments({ cardName: cardName })
@@ -55,6 +65,14 @@ routes.get("/:cardName", (req, res) => {
 
 //Get All cards with user id X
 routes.get("/:userId", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const userId = req.params.userId;
 
   users.countDocuments({ googleId: userId })
@@ -78,6 +96,14 @@ routes.get("/:userId", (req, res) => {
 
 //Add new
 routes.post("/", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   if (
     !req.body.cardName ||
     !req.body.manaCost ||
@@ -113,6 +139,14 @@ routes.post("/", (req, res) => {
 
 //Update
 routes.put("/:cardName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const cardName = req.params.cardName;
 
   if (
@@ -165,6 +199,14 @@ routes.put("/:cardName", (req, res) => {
 
 //Delete
 routes.delete("/:cardName", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+
   const cardName = req.params.cardName;
 
   cards.countDocuments({ cardName: cardName })
@@ -187,6 +229,14 @@ routes.delete("/:cardName", (req, res) => {
 
 //Add a card to user card list
 routes.post("/:cardName/:userId", (req, res) => {
+
+    /*
+  #swagger.tags = ['Cards'] 
+  #swagger.security = [{
+    "JWT": []
+  }]
+  */
+ 
   const cardName = req.params.cardName;
   const userId = req.params.userId;
   if(!userId || !cardName){
