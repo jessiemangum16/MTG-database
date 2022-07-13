@@ -234,7 +234,7 @@ routes.delete("/:cardName", (req, res) => {
 });
 
 //Add a card to user card list
-routes.post("/:cardName/:userId", (req, res) => {
+routes.post("/:cardName", (req, res) => {
 
     /*
   #swagger.tags = ['User Cards'] 
@@ -245,12 +245,11 @@ routes.post("/:cardName/:userId", (req, res) => {
   */
 
   const cardName = req.params.cardName;
-  const userId = profile.id;
-  if(!userId || !cardName){
+  if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
   }
   else{
-    users.countDocuments({ googleId: userId })
+    users.countDocuments({ googleId: profile.id })
     .then(function (num) {
       if (num === 0) {
         res.status(400).json("Could not find user.");
@@ -260,7 +259,7 @@ routes.post("/:cardName/:userId", (req, res) => {
           if (num === 0) {
             res.status(400).json("Could not find card.");
           } else {
-            users.findOne({ googleId: userId }, (err, user) => {
+            users.findOne({ googleId: profile.id }, (err, user) => {
               user.cards.push(cardName);
               user.save(function (err) {
                 if (err) {

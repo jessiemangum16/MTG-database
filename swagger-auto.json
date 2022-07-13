@@ -256,18 +256,16 @@
             "JWT": []
           }
         ]
-      }
-    },
-    "/cards/{userId}": {
-      "get": {
+      },
+      "post": {
         "tags": [
           "User Cards"
         ],
-        "summary": "Get all cards for current user",
+        "summary": "Add card to users cards by card Id",
         "description": "",
         "parameters": [
           {
-            "name": "userId",
+            "name": "cardName",
             "in": "path",
             "required": true,
             "type": "string"
@@ -291,20 +289,14 @@
         ]
       }
     },
-    "/cards/{cardName}/{userId}": {
-      "post": {
+    "/cards/{userId}": {
+      "get": {
         "tags": [
           "User Cards"
         ],
-        "summary": "Add card to users cards by card Id",
+        "summary": "Get all cards for current user",
         "description": "",
         "parameters": [
-          {
-            "name": "cardName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "userId",
             "in": "path",
