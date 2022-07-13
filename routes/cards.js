@@ -246,7 +246,7 @@ routes.post("/:cardName/:userId", (req, res) => {
   */
 
   const cardName = req.params.cardName;
-  const userId = req.params.cardName;
+  const userId = req.params.userId;
 
   if(!cardName){
     res.status(400).json("Must use a valid user id and card name.");
