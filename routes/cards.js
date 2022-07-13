@@ -199,7 +199,7 @@ routes.post("/:cardName/:userId", (req, res) => {
             res.status(400).json("Could not find card.");
           } else {
             users.findOne({ googleId: userId }, (err, user) => {
-              user.cardList.push(cardName);
+              user.cards.push(cardName);
               user.save(function (err) {
                 if (err) {
                   res.status(500).json(err || 'Some error occurred while updating the card.');
