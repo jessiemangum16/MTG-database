@@ -7,6 +7,7 @@ routes.use(bodyParser.urlencoded({ extended: false }));
 routes.use(bodyParser.json());
 
 const decks = require('../models/decks');
+const users = require('../models/User')
 
   /*
   #swagger.tags = ['Decks'] 
@@ -100,11 +101,11 @@ routes.post("/", (req, res) => {
       const userId = req.body.userId;
       const deckId = data._id;
 
-      users.countDocuments({ _id: userId }).then(function (num) {
+      users.countDocuments({ googleId: userId }).then(function (num) {
         if (num === 0) {
           res.status(400).json("Couldn't find user");
         } else {
-          users.findOneAndUpdate({ _id: userId }, { $push: { decks: deckId } })
+          users.findOneAndUpdate({ googleId: userId }, { $push: { decks: deckId } })
           .then((data) => {
             res.status(200).send(data);
           })
@@ -187,7 +188,7 @@ routes.post("/:deckId/:cardId", (req, res) => {
         res.status(400).json("Must use a valid name.");
       } else {
         decks.findOne({ deckId: deckId }, (err, deck) => {
-          deck.cards.push(cardId);
+          deck.deckCards.push(cardId);
           deck.save(function (err) {
             if (err) {
               res.status(500).json(err || 'Some error occurred while updating the deck.');
@@ -219,7 +220,7 @@ routes.delete("/:deckId/:cardId", (req, res) => {
         res.status(400).json("Must use a valid name.");
       } else {
         decks.findOne({ deckId: deckId }, (err, deck) => {
-          deck.cards.pull(cardId);
+          deck.deckCards.pull(cardId);
           deck.save(function (err) {
             if (err) {
               res.status(500).json(err || 'Some error occurred while updating the deck.');
